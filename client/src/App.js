@@ -23,13 +23,30 @@ export default function App(){
 
     return(
         <div className="App">
-        {isTyping ? <Dots/> : null}
-        <IconButton color="primary" aria-label="upload picture" component="label">
-            <input hidden accept="image/*" type="file" />
-            <PhotoCamera />
-            </IconButton>
-            <TextField onChange={handleChange} placeholder="Please enter content" />
-        <Button>Submit</Button>
+        {isTyping ?    
+        <div className='bubbleContainer'>     
+            <div className='customerBubble'>
+                <Dots/> 
+            </div> 
+            <div className='customerBubbleTip'>
+            </div>
+        </div> : null}
+
+        {/* <div className='bubbleContainer'>     
+            <div className='customerBubble'>1
+            </div> 
+            <div className='customerBubbleTip'>
+            </div>
+        </div> */}
+
+        <form className='inputForm'>
+            <IconButton color="primary" aria-label="upload picture" component="label">
+                <input hidden accept="image/*" type="file" />
+                <PhotoCamera />
+                </IconButton>
+                <TextField onChange={handleChange} placeholder="Please enter content" />
+            <Button>Submit</Button>
+        </form>
       </div>
     );
 }

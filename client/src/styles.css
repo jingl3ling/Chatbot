@@ -32,3 +32,29 @@
       opacity: 0;
     }
 }
+
+.inputForm{
+    position: absolute;
+    bottom: 0px;
+}
+
+.bubbleContainer{
+    display:flex;
+}
+
+.customerBubble{
+    /* width: 40%; */
+    background-color: rgb(158, 216, 119);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.customerBubbleTip{
+    width: 0; 
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 15px solid rgb(158, 216, 119);
+    position: relative;
+    left: -20px;
+}
