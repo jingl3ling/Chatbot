@@ -33,17 +33,6 @@ export default function App(){
         <div className="App">
 
         <div className='chatbox'>
-            <div className='bubbleContainer'>   
-                <div className='supportBubble'>  
-                <div className='supportBubbleTip'></div>
-                    <div className='supportBubbleBody'>
-                       <p>Hi, Customer! Thanks for contacting Zmodo Support. 
-                        What can we help you with? 
-                        (Please choose a category.)</p>
-                    </div> 
-                </div>
-            </div> 
-
             <Conversation/>
 
             {userIsTyping ?    
