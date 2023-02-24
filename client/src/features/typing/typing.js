@@ -1,6 +1,8 @@
-import "./styles.css"
+import "../../styles.css"
+import userBubble from '../bubble/userBubble'
+import supportBubble from '../bubble/supportBubble'
 
-export default function App(){
+function App(){
     return (
         <div className="typing">
           <div className="typing__dot"></div>
@@ -9,3 +11,5 @@ export default function App(){
         </div>
       );
 }
+
+export const UserTyping = userBubble(App);

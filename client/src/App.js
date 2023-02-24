@@ -1,52 +1,48 @@
 import React, { useState, useRef }  from 'react';
-import { TextField, Button, IconButton} from "@mui/material";
+import { useSelector, useDispatch } from 'react-redux'
+import { TextField, Button, IconButton } from "@mui/material";
 import { PhotoCamera } from "@mui/icons-material"
 import {CSSTransition, TransitionGroup} from "react-transition-group";
-import Dots from './Dots'
+import {UserTyping} from './features/typing/typing'
+import UserInput from './userInput';
 import "./styles.css"
 
 export default function App(){
-    const [isTyping, setTyping] = useState(false);
+    const [isSupportTyping, setSupportTyping] = useState(false);
+    const [isUserTyping, setUserTyping] = useState(false);
     const [timeoutID, setTimeoutID] = useState(undefined);
     const [inProp, setInProp] = useState(false);
     const nodeRef = useRef(null);
+
+    const userIsTyping = useSelector((state) => state.typing.user)
   
-    const handleChange = () => {
-      setTyping(true);
-  
-      clearTimeout(timeoutID);
-      const timeID = setTimeout(() => {
-        setTyping(false);
-      }, 2000);
-      setTimeoutID(timeID);
-    };
+    const handleSupportChange = () => {
+        setSupportTyping(true);
+    
+        clearTimeout(timeoutID);
+        const timeID = setTimeout(() => {
+            setSupportTyping(false);
+        }, 2000);
+        setTimeoutID(timeID);
+      };
 
     return(
         <div className="App">
-        {isTyping ?    
-        <div className='bubbleContainer'>     
-            <div className='customerBubble'>
-                <Dots/> 
-            </div> 
-            <div className='customerBubbleTip'>
-            </div>
-        </div> : null}
 
-        {/* <div className='bubbleContainer'>     
-            <div className='customerBubble'>1
-            </div> 
-            <div className='customerBubbleTip'>
-            </div>
-        </div> */}
+        <div className='chatbox'>
+            {userIsTyping ?    
+            <UserTyping/>  : null}
+        </div>
 
-        <form className='inputForm'>
+        <form className='SupportInputForm'>
             <IconButton color="primary" aria-label="upload picture" component="label">
                 <input hidden accept="image/*" type="file" />
                 <PhotoCamera />
                 </IconButton>
-                <TextField onChange={handleChange} placeholder="Please enter content" />
+                <TextField onChange={handleSupportChange} placeholder="Please enter content" />
             <Button>Submit</Button>
         </form>
+        <UserInput/>
       </div>
     );
 }
