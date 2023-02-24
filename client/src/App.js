@@ -41,15 +41,7 @@ export default function App(){
             {supportIsTyping ?    
             <SupportTyping/>  : null}
         </div>
-
-        {/* <form className='SupportInputForm'>
-            <IconButton color="primary" aria-label="upload picture" component="label">
-                <input hidden accept="image/*" type="file" />
-                <PhotoCamera />
-                </IconButton>
-                <TextField onChange={handleSupportChange} placeholder="Please enter content" />
-            <Button>Submit</Button>
-        </form> */}
+        
         <SupportInput/>
         <UserInput/>
       </div>
