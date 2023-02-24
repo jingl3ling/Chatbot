@@ -6,6 +6,7 @@ import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {UserTyping, SupportTyping} from './features/typing/typing'
 import UserInput from './userInput';
 import SupportInput from './supportInput';
+import Conversation from './features/conversation/conversation'
 import "./styles.css"
 
 export default function App(){
@@ -42,6 +43,8 @@ export default function App(){
                     </div> 
                 </div>
             </div> 
+
+            <Conversation/>
 
             {userIsTyping ?    
             <UserTyping/>  : null}

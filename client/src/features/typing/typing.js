@@ -1,6 +1,6 @@
 import "../../styles.css"
-import UserBubble from '../bubble/userBubble'
-import SupportBubble from '../bubble/supportBubble'
+import UserBubble from '../bubble/userTypingBubble'
+import SupportBubble from '../bubble/supportTypingBubble'
 
 function App(){
     return (
