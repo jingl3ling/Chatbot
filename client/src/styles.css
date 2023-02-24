@@ -47,12 +47,14 @@
 
 .bubbleContainer{
     position: relative;
+    margin: 10px;
 }
 
 .userBubble{
     display:flex;
     position: absolute;
     right: 0px;
+    max-width: 80%;
 }
 
 .userBubbleBody{
@@ -72,9 +74,33 @@
     left: -20px;
 }
 
+.supportBubble{
+    display:flex;
+    /* position: absolute;
+    left: 0px; */
+    max-width: 80%;
+}
+
+.supportBubbleBody{
+    /* width: 40%; */
+    background-color: rgb(238, 238, 238);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.supportBubbleTip{
+    width: 0; 
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 15px solid rgb(238, 238, 238);
+    position: relative;
+    left: 20px;
+}
+
 .chatbox{
     width: 60%;
     margin:  auto;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }

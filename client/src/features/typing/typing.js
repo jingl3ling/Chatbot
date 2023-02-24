@@ -1,6 +1,6 @@
 import "../../styles.css"
-import userBubble from '../bubble/userBubble'
-import supportBubble from '../bubble/supportBubble'
+import UserBubble from '../bubble/userBubble'
+import SupportBubble from '../bubble/supportBubble'
 
 function App(){
     return (
@@ -12,4 +12,5 @@ function App(){
       );
 }
 
-export const UserTyping = userBubble(App);
+export const UserTyping = UserBubble(App);
+export const SupportTyping = SupportBubble(App);
