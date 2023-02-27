@@ -11,7 +11,6 @@ export default function App(props){
     const supportIsTyping = useSelector((state) => state.typing.support)
     const dispatch = useDispatch()
     const state = store.getState();
-    console.log('state:',state)
 
     const valueRef = useRef('')
 
@@ -26,11 +25,12 @@ export default function App(props){
     };
 
     const handleSubmit = (e) => {
+        e.preventDefault();
         const context = valueRef.current.value
         const message = {
             by: 'support',
             context: context,
-            time: Date()
+            timestamp: new Date().toLocaleString()
         }
         dispatch(supportNotTyping());
         dispatch(addMessage(message));
@@ -40,13 +40,13 @@ export default function App(props){
 
     return(
         <div>
-        <form className='SupportInputForm'>
+        <form className='SupportInputForm' onSubmit={handleSubmit}>
             <IconButton color="primary" aria-label="upload picture" component="label">
                 <input hidden accept="image/*" type="file" />
                 <PhotoCamera />
                 </IconButton>
                 <TextField inputRef={valueRef} onChange={handleChange} placeholder="Please enter content" />
-            <Button onClick={handleSubmit}>Submit</Button>
+            <Button type='submit'>Submit</Button>
         </form>
         </div>
     )

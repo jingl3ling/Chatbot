@@ -1,8 +1,5 @@
 import React, { useState, useRef }  from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { TextField, Button, IconButton } from "@mui/material";
-import { PhotoCamera } from "@mui/icons-material"
-import {CSSTransition, TransitionGroup} from "react-transition-group";
 import {UserTyping, SupportTyping} from './features/typing/typing'
 import UserInput from './userInput';
 import SupportInput from './supportInput';

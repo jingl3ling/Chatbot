@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const conversationSlice = createSlice({
   name: 'conversation',
-  initialState: [{by:'support',context:"Hi, how can I help you?", timestamp:Date()}],
+  initialState: [{by:'support',context:"Hi, how can I help you?", timestamp:new Date().toLocaleString()}],
   reducers: {
     addMessage: (state, actions) => {
       state.push(actions.payload)

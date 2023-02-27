@@ -1,15 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { useIdleTimer } from 'react-idle-timer'
 import Bubble from '../bubble/bubble'
 import { useSelector, useDispatch } from 'react-redux'
+import { addMessage } from './conversationSlice';
 
 export default function App(){
     const conversation = useSelector((state)=>state.conversation);
-    console.log('here',conversation)
+    const [remaining, setRemaining] = useState(0)
+    const dispatch = useDispatch()
+
+    const onIdle = () => {
+        const message = {
+            by: 'support',
+            context: '[Auto Message]Are you still there?',
+            timestamp: new Date().toLocaleString()
+        }
+
+        dispatch(addMessage(message));
+      }
+
+    const { getRemainingTime } = useIdleTimer({
+        onIdle,
+        timeout: 120_000,
+        throttle: 500
+      })
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setRemaining(Math.ceil(getRemainingTime() / 1000))
+        }, 500)
+
+        return () => {
+            clearInterval(interval)
+        }
+    })
+
     return(
     <div>
-        {conversation?.map(({by,context,timestamp})=>(
-            // <div>{{by}=='user'? <UserBubble context={context}/>:<SupportBubble context={context}/>}</div>
-            <Bubble by={by} context={context}/>
+        {conversation?.map((message)=>(
+            <Bubble message={message}/>
         ))}
     </div>
     );

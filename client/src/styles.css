@@ -45,10 +45,11 @@
     left: 0px;
 }
 
-.bubbleContainer{
+.supportBubbleContainer{
     display: flex;
     position: relative;
     margin: 10px;
+    padding: 5px;
 }
 
 .userBubbleContainer{
@@ -56,12 +57,13 @@
     flex-direction: row-reverse;
     position: relative;
     margin: 10px;
+    padding: 5px;
 }
 
 .userBubble{
     display:flex;
     position: absolute;
-    right: 20px;
+    right: 25px;
     top:20px;
     max-width: 80%;
 }
@@ -86,7 +88,7 @@
 .supportBubble{
     display:flex;
     position: absolute;
-    left: 20px;
+    left: 25px;
     top: 20px;
     max-width: 80%;
 }
@@ -113,4 +115,25 @@
     margin:  auto;
     display: flex;
     flex-direction: column;
+    overflow-y:scroll;
+    height: 85vh;
 }
+
+.userTimestamp{
+    display: block;
+    font-size: small;
+    color: gray;
+    position: absolute;
+    top: 5px;
+    right: 55px;
+}
+
+.supportTimestamp{
+    display: block;
+    font-size: small;
+    color: gray;
+    position: absolute;
+    top: 5px;
+    left: 55px;
+}
+

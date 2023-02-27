@@ -12,7 +12,7 @@ export default function App(ChildComponent) {
 
       render() {
         return (
-            <div className='bubbleContainer'>  
+            <div className='supportBubbleContainer'>  
               <div><Avatar><PhotoCamera/></Avatar>  
                 <div className='supportBubble'>  
                     <div className='supportBubbleTip'></div>
