@@ -45,7 +45,11 @@ export default function App(props){
                 <input hidden accept="image/*" type="file" />
                 <PhotoCamera />
                 </IconButton>
-                <TextField inputRef={valueRef} onChange={handleChange} placeholder="Please enter content" />
+                <TextField 
+                inputRef={valueRef} 
+                onChange={handleChange} 
+                placeholder="Please enter content" 
+                inputProps={{ autoComplete: 'off' }}/>
             <Button type='submit'>Submit</Button>
         </form>
         </div>

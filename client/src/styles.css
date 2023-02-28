@@ -45,27 +45,22 @@
     left: 0px;
 }
 
-.supportBubbleContainer{
-    display: flex;
-    position: relative;
-    margin: 10px;
-    padding: 5px;
-}
-
 .userBubbleContainer{
     display: flex;
     flex-direction: row-reverse;
     position: relative;
     margin: 10px;
     padding: 5px;
+    max-width: 80%;
+    margin-left: 15%;
+    box-sizing: content-box;
 }
 
 .userBubble{
-    display:flex;
+    display:contents;
     position: absolute;
     right: 25px;
     top:20px;
-    max-width: 80%;
 }
 
 .userBubbleBody{
@@ -73,6 +68,9 @@
     background-color: rgb(158, 216, 119);
     border-radius: 5px;
     padding: 10px;
+    position: relative;
+    left: 15px;
+    top: 10px;
 }
 
 .userBubbleTip{
@@ -82,15 +80,24 @@
     border-right: 15px solid transparent;
     border-top: 15px solid rgb(158, 216, 119);
     position: relative;
-    left: -20px;
+    left: 0px;
+    top: 10px;
+}
+
+.supportBubbleContainer{
+    display: flex;
+    position: relative;
+    margin: 10px;
+    padding: 5px;
+    height: max-content;
+    max-width: 80%;
 }
 
 .supportBubble{
-    display:flex;
+    display:contents;
     position: absolute;
     left: 25px;
     top: 20px;
-    max-width: 80%;
 }
 
 .supportBubbleBody{
@@ -98,6 +105,9 @@
     background-color: rgb(238, 238, 238);
     border-radius: 5px;
     padding: 10px;
+    position: relative;
+    left: -15px;
+    top: 10px;
 }
 
 .supportBubbleTip{
@@ -107,7 +117,8 @@
     border-right: 15px solid transparent;
     border-top: 15px solid rgb(238, 238, 238);
     position: relative;
-    left: 20px;
+    left: 0px;
+    top: 10px;
 }
 
 .chatbox{
@@ -117,6 +128,15 @@
     flex-direction: column;
     overflow-y:scroll;
     height: 85vh;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+}
+
+.conversation{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
 }
 
 .userTimestamp{
@@ -124,8 +144,8 @@
     font-size: small;
     color: gray;
     position: absolute;
-    top: 5px;
-    right: 55px;
+    top: 0px;
+    right: 60px;
 }
 
 .supportTimestamp{
@@ -133,7 +153,7 @@
     font-size: small;
     color: gray;
     position: absolute;
-    top: 5px;
-    left: 55px;
+    top: 0px;
+    left: 60px;
 }
 

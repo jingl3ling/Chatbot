@@ -12,7 +12,7 @@ export default function App(){
     const onIdle = () => {
         const message = {
             by: 'support',
-            context: '[Auto Message]Are you still there?',
+            context: '[Auto Message]Are you still there? It has been 2 minutes since you were last active.',
             timestamp: new Date().toLocaleString()
         }
 
@@ -36,7 +36,7 @@ export default function App(){
     })
 
     return(
-    <div>
+    <div className='conversation'>
         {conversation?.map((message)=>(
             <Bubble message={message}/>
         ))}

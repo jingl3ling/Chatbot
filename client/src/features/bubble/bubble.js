@@ -9,22 +9,22 @@ export default function App(props){
     if(by=='user'){
         return(
             <div className='userBubbleContainer'>   
-                <div><Avatar><PhotoCamera/></Avatar>  
+                <Avatar><PhotoCamera/></Avatar>  
                 <div className='userTimestamp'>{time}</div>
                 <div className='userBubble'> 
+                    <div className='userBubbleTip'></div>
                     <div className='userBubbleBody'>
                         {context}
                     </div> 
-                    <div className='userBubbleTip'></div>
                 </div>
-            </div> 
+
             </div>
         );
     }
     else{
         return (
             <div className='supportBubbleContainer'> 
-                <div><Avatar><PhotoCamera/></Avatar>  
+            <Avatar><PhotoCamera/></Avatar>  
                 <div className='supportTimestamp'>{time}</div>
                 <div className='supportBubble'> 
                 <div className='supportBubbleTip'></div>
@@ -32,7 +32,6 @@ export default function App(props){
                         {context}
                     </div> 
                 </div>
-            </div>  
             </div>
         );        
     }
