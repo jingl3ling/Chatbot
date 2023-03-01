@@ -13,14 +13,13 @@ export default function App(ChildComponent) {
       render() {
         return (
             <div className='userBubbleContainer'>  
-              <div><Avatar><PhotoCamera/></Avatar>
+              <Avatar><PhotoCamera/></Avatar>
                 <div className='userBubble'>  
+                <div className='userBubbleTip'></div>
                     <div className='userBubbleBody'>
                         <ChildComponent/> 
                     </div> 
-                    <div className='userBubbleTip'></div>
                 </div>
-              </div> 
             </div> 
         );
       }
